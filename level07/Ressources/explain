@@ -1,0 +1,62 @@
+Pour ce niveau, j'ai utilisé GDB pour voir ce qu'il se passe dans l'exectuable.
+
+gdb ./level07
+  -> Cette commande permet de lancer GDB sur le programme.
+
+(Les commande suivant sont executé dans GDB)
+
+b main
+  -> Permet de mettre un breakpoint sur la fonction main.
+
+r
+  -> Permet de lancer le programme.
+
+layout asm
+  -> Permet de voir le code assembleur du programme.
+
+...
+0x804856f <main+91>     movl   $0x8048680,(%esp)        <---
+0x8048576 <main+98>     call   0x8048400 <getenv@plt>
+...
+
+On voit que la fonction `getenv` est utilisé a l'adresse 0x8048576 et que l'argument est stocké dans l'espace mémoire à l'adresse 0x8048680.
+
+x/s 0x8048680
+ -> Permet de voir le contenu de l'espace mémoire à l'adresse 0x8048680.
+
+Ce qui donne -> "LOGNAME"
+
+...
+0x804857f <main+107>    movl   $0x8048688,0x4(%esp)
+0x8048587 <main+115>    lea    0x14(%esp),%eax
+0x804858b <main+119>    mov    %eax,(%esp)
+0x804858e <main+122>    call   0x8048440 <asprintf@plt>
+...
+
+On voit que la fonction `asprintf` est utilisé a l'adresse 0x804858e et que l'argument est stocké dans l'espace mémoire à l'adresse 0x8048688.
+
+x/s 0x8048688
+  -> Permet de voir le contenu de l'espace mémoire à l'adresse 0x8048688.
+
+Ce qui donne -> "/bin/echo %s "
+
+...
+0x804859a <main+134>    call   0x8048410 <system@plt>
+...
+
+On voit que la fonction `system` est utilisé a l'adresse 0x804859a, elle prend en argument la chaine de caracteres `/bin/echo %s`.
+
+(Les commandes suivantes sont executé dans dans le shell)
+
+env | grep LOGNAME
+  -> Permet de voir le contenu de la variable d'enviorment LOGNAME.
+
+Ce qui donne -> "LOGNAME=levle07"
+
+En executant le programme, on voit que le programme affiche "levle07".
+
+Si on change la vairable LOGNAME a "Test", le programme affiche "Test".
+
+Ce qui confirme que le programme lance bien la commande `echo` avec le bon argument.
+
+Ce qui est une vulnerabilité car si l'on change la variable LOGNAME pour "a && getflag", le programme lance la commande `getflag`

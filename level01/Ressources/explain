@@ -1,0 +1,11 @@
+Pour ce niveau on peut voir dans le fichier /etc/passwd avec la command:
+
+-----
+
+cat /etc/passwd
+
+-----
+
+Que la ligne correspondant a l'utilisateur level01 a un hash en clair:
+
+
