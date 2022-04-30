@@ -1,11 +1,14 @@
-Pour ce niveau on peut voir dans le fichier /etc/passwd avec la command:
+Pour ce niveau on peut voir dans le fichier /etc/passwd:
 
------
+> cat /etc/passwd
 
-cat /etc/passwd
+...
+flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
+...
 
------
+`42hDRfypTqqnw` est le hash du mot de passe de l'utilisateur flag01
 
-Que la ligne correspondant a l'utilisateur level01 a un hash en clair:
+Apres ca, on peut utiliser le logiciel `John` qui permet de trouver
+le mot de passe a partir du hash
 
-
+> john hash_file

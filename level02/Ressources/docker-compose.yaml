@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  level02:
+    container_name: level02
+    image: level02:1.0.0
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - './:/level02'
+    command: ['tcpflow', '-C', '-FX', '-r', '/level02/level02.pcap']

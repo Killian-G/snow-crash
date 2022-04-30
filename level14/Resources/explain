@@ -3,7 +3,7 @@ j'ai donc copier le fichier /bin/getflag:
 
 -----
 
-scp -P 4242 level14@192.168.27.128:/bin/getflag ./level14
+scp -P $SNOWCRASH_SSH_PORT level14@192.168.27.128:/bin/getflag ./level14
 
 -----
 
