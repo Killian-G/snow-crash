@@ -1,5 +1,0 @@
-L'algoritme de chiffrement ici est le valeur du caractères ASCII + sa position dans la chaine de caracteres
-
-Pour retrouver le token original il nous sufit de faire la meme operation en retournant la valeur ASCII - sa position dans la chaine de caracteres
-
-f3iji1ju5yuevaus41q1afiuq
