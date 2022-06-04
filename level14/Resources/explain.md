@@ -79,4 +79,4 @@ On voit qu'il y a un saut vers une instruction en fonction du retour de la fonct
 uid=3014(flag14) gid=3014(flag14) groups=3014(flag14),1001(flag)
 ```
 
-On a plus qu'à changer la valeur du registre `eax` pour `0xbc6`
+On a plus qu'à changer la valeur du registre `eax` pour `0xbc6` a l'adresse `0x08048b0a`
