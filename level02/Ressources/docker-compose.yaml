@@ -8,4 +8,4 @@ services:
       dockerfile: Dockerfile
     volumes:
       - './:/level02'
-    command: ['tcpflow', '-C', '-FX', '-r', '/level02/level02.pcap']
+    command: ['tcpflow', '-C', '-r', '/level02/level02.pcap']
