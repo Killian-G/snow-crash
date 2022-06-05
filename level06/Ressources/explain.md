@@ -1,7 +1,7 @@
 Ce challenge contient un fichier PHP.
 
 ```bash
->cat level06.php
+> cat level06.php
 #!/usr/bin/php
 <?php
 function y($m) { $m = preg_replace("/\./", " x ", $m); $m = preg_replace("/@/", " y", $m); return $m; }

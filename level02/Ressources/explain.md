@@ -55,6 +55,10 @@ Login incorrect
 ...
 ```
 
+`-C` print packet content
+
+`-r` read from file
+
 On voit que ce sont des packets de connexion,
 il se connecte avec `levelX` et le mot de passe `ft_wandr   NDRel L0L`
 

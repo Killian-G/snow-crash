@@ -35,7 +35,11 @@ Donc si on envoie :
 `/*/exploit`
 ```
 
-Plu
+Plus précisément il faut l'encoder, car c'est un URI :
+
+```bash
+%60%2F%2A%2FEXPLOIT%60
+```
 
 S'il y a un exécutable dans `/tmp/` qui se nomme `EXPLOIT`, il sera exécuté.
 
